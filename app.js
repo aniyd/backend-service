@@ -11,7 +11,6 @@ var logger = require('morgan');
 var login = require('./routes/login');
 var patch = require('./routes/patch');
 var generateThumbnail = require("./routes/generateThumbnail");
-
 var app = express();
 
 app.use(logger('dev'));
@@ -30,9 +29,5 @@ app.use("/generateThumbnail", generateThumbnail);
 var server = httpServer.listen(process.env.PORT,()=>{
 
 });
-
-function stop() {
-  server.close();
-}
 
 module.exports = app;
